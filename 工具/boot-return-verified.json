@@ -1,0 +1,11 @@
+{
+  "verified": true,
+  "return_method": "physical USB unplug/replug performed by user",
+  "software_switch_app_succeeded": false,
+  "erase_or_write_performed": false,
+  "restored_vid": 14139,
+  "restored_pid": 4507,
+  "restored_version": "0126",
+  "time": 1790055922.6206532,
+  "limitation": "Only proves exit from bootloader while original image is intact; does not prove corrupted-image hardware recovery."
+}

@@ -1,0 +1,52 @@
+{
+  "revision": 2,
+  "status": "FLASHED (current). USB + Bluetooth slot 1 user acceptance passed on two keyboards; re-flashed 2026-10-02 after testing D",
+  "behavior": "Mac Fn emits held F24, host maps device F24 to native Fn; F1-F12 standard, Fn+F-row uses original media actions. Win logic unchanged.",
+  "input_sha256": "a20bc774d12f0a627a150d35d5efb0893ae95e20c6e16fcebe03111c031c5725",
+  "output_sha256": "e1374c770f0ccf3f34ab6422836663615041023865ae873f7f979b103019c645",
+  "output_file": "YOGO75PRO-v1.26-MAC-Fn-F24-StandardFRow-v2.bin",
+  "size": 172120,
+  "stub_address": "0x2050f30",
+  "stub_length": 168,
+  "patches": [
+    {
+      "name": "special Fn handler",
+      "file_offset": "0xd46c",
+      "old": "80b5a8b0",
+      "new": "1cf0a0bd"
+    },
+    {
+      "name": "cache Fn state for F-row key-down",
+      "file_offset": "0x26c4a",
+      "old": "017902780244d1729df85710",
+      "new": "dff804f000bf5d0f050200bf"
+    },
+    {
+      "name": "mask cached layer for keymap lookup",
+      "file_offset": "0x26ca0",
+      "old": "c97a817200211491807a0146",
+      "new": "dff800f0890f050200bf00bf"
+    },
+    {
+      "name": "Mac F-row media only with Fn",
+      "file_offset": "0x26d26",
+      "old": "90f82700012840f04283ffe7",
+      "new": "dff804f000bf9d0f050200bf"
+    },
+    {
+      "name": "allow Mac Fn+F6 focus function",
+      "file_offset": "0x26ebe",
+      "old": "0bd1",
+      "new": "00bf"
+    }
+  ],
+  "host_mapping": {
+    "src": 30064771187,
+    "dst": 1095216660483
+  },
+  "limitations": [
+    "No hardware validation of this revision yet",
+    "FnFunction keys use original ATK media actions; OS may interpret modifier+media differently",
+    "Bluetooth/2.4 GHz not tested"
+  ]
+}

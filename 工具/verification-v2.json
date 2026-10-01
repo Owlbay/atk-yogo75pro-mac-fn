@@ -1,0 +1,48 @@
+{
+  "revision": 2,
+  "sha256": "e1374c770f0ccf3f34ab6422836663615041023865ae873f7f979b103019c645",
+  "cases": 597,
+  "tests": [
+    {
+      "test": "image header/payload CRC and lengths",
+      "cases": 2,
+      "result": "PASS"
+    },
+    {
+      "test": "physical F1-F12 default standard key press and release",
+      "cases": 12,
+      "result": "PASS"
+    },
+    {
+      "test": "Fn+media, F24 coexists, both key-release orders",
+      "cases": 20,
+      "result": "PASS"
+    },
+    {
+      "test": "press F-row before Fn, release F-row while Fn held",
+      "cases": 12,
+      "result": "PASS"
+    },
+    {
+      "test": "held Fn across repeated volume/mute and then Q",
+      "cases": 1,
+      "result": "PASS"
+    },
+    {
+      "test": "Win actual physical dispatcher differential, with/without Fn",
+      "cases": 38,
+      "result": "PASS"
+    },
+    {
+      "test": "non-Fn special handlers unchanged",
+      "cases": 510,
+      "result": "PASS"
+    },
+    {
+      "test": "Fn released after Win/Mac mode changes",
+      "cases": 2,
+      "result": "PASS"
+    }
+  ],
+  "scope": "ARM firmware routines, actual physical dispatcher; 3 non-key scan/report side-effect callbacks stubbed. No radio/bootloader/OS emulation."
+}

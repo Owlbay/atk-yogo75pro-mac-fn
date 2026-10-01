@@ -1,0 +1,58 @@
+{
+  "revision": "v4",
+  "sha256": "8415844908cf603d1351ad4b366be223d39d8cf4938a214366bddffe1a45ed38",
+  "cases": 634,
+  "tests": [
+    {
+      "test": "image header/payload CRC and lengths",
+      "cases": 1,
+      "result": "PASS"
+    },
+    {
+      "test": "Mac Fn tap: Globe down/up, no F24",
+      "cases": 1,
+      "result": "PASS"
+    },
+    {
+      "test": "physical F1-F12 default standard key press and release",
+      "cases": 12,
+      "result": "PASS"
+    },
+    {
+      "test": "Fn+F-row media, both key-release orders, no stuck usage",
+      "cases": 20,
+      "result": "PASS"
+    },
+    {
+      "test": "press F-row before Fn, release F-row while Fn held",
+      "cases": 12,
+      "result": "PASS"
+    },
+    {
+      "test": "held Fn across repeated volume/mute and then Q",
+      "cases": 1,
+      "result": "PASS"
+    },
+    {
+      "test": "Mac Fn+key keyboard report equals v2 minus F24",
+      "cases": 37,
+      "result": "PASS"
+    },
+    {
+      "test": "Win physical dispatcher differential vs official, with/without Fn",
+      "cases": 38,
+      "result": "PASS"
+    },
+    {
+      "test": "non-Fn special handlers unchanged",
+      "cases": 510,
+      "result": "PASS"
+    },
+    {
+      "test": "Fn released after Win/Mac mode changes",
+      "cases": 2,
+      "result": "PASS"
+    }
+  ],
+  "scope": "ARM firmware routines in Unicorn; 3 non-key scan/report side-effect callbacks stubbed. No USB/radio/bootloader/macOS emulation."
+}
